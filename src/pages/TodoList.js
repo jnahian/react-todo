@@ -9,7 +9,7 @@ const TodoList = () => {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    document.title = "Todo List - All"
+    document.title = "Todo List - All";
   }, []);
 
   useEffect(() => {
@@ -79,6 +79,10 @@ const TodoList = () => {
   const formatDateTime = (date) => {
     let newDate = new Date(date);
     return moment(newDate).format('lll');
+  }
+
+  const confirmAction = () => {
+
   }
 
   return (

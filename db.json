@@ -6,7 +6,7 @@
       "description": "Go to office @ 9AM",
       "date": "01/12/2021",
       "repeat": "daily",
-      "done": false
+      "done": true
     },
     {
       "title": "Blue Silk Tuxedo with black buttons",
@@ -23,14 +23,6 @@
       "repeat": "once",
       "done": true,
       "id": 3
-    },
-    {
-      "title": "Dark Denim Top Dark Denim Top",
-      "description": "",
-      "date": "2021-03-09T18:00:00.000Z",
-      "repeat": "once",
-      "done": false,
-      "id": 4
     },
     {
       "title": "Dark Denim Top Dark Denim Top",
