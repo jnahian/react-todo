@@ -1,0 +1,214 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 600px;
+  margin: 0 auto;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.App-header, .App-footer, .App-content {
+  padding: 15px;
+}
+
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  border-bottom: 1px solid;
+}
+
+.App-link {
+  color: #61dafb;
+  font-size: 1rem;
+}
+
+.App-content .App-todos .App-todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, .2);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.App-content .App-todos .App-todo.done {
+  box-shadow: 0 0 2px #54fd27;
+  background-color: #54fd271a;
+}
+
+.App-content .App-todos .App-todo h3 {
+  margin-bottom: 10px;
+}
+
+.App-content .App-todos .App-todo .date {
+  font-size: .8rem;
+  margin-top: 10px;
+  color: #61dafb;
+}
+
+.App-content .App-todos .App-todo .tag {
+  font-size: .7rem;
+  background: #54fd27;
+  padding: 2px 7px 3px;
+  margin-left: 10px;
+  border-radius: 10px;
+  line-height: 1;
+  color: #282c34;
+  text-transform: uppercase;
+}
+
+.App-content .App-todos .App-todo .actions {
+  width: 60px;
+  min-width: 60px;
+  margin-left: 10px;
+}
+
+.App-form .form-item {
+  margin-bottom: 15px;
+  display: block;
+}
+
+.App-form .form-item label {
+  display: block;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.App-form .form-item .form-input,
+.App-form .form-item .form-select {
+  display: block;
+  padding: 15px;
+  border: 2px solid rgba(255, 255, 255, .2);
+  background-color: transparent;
+  border-radius: 10px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.App-form .form-item  .form-input {
+  width: calc(100% - 30px);
+}
+
+.App-form .form-item .form-select {
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  background: transparent;
+  border-radius: 10px;
+  border: 2px solid;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #ffffff;
+  transition: all linear .2s;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.button > svg {
+  margin-right: 10px;
+}
+
+.submit-button {
+  padding: 15px;
+  width: 100%;
+  color: #54fd27;
+}
+
+.submit-button:hover {
+  background: #54fd27;
+  border-color: #54fd27;
+  color: #282c34;
+}
+
+.header-button {
+  padding: 5px 10px;
+  color: #61dafb;
+  font-size: .8rem;
+}
+
+.header-button:hover {
+  background: #61dafb;
+  border-color: #61dafb;
+  color: #282c34;
+}
+
+.small-button {
+  display: inline-flex;
+  padding: 5px;
+  background: transparent;
+  border-radius: 10px;
+  border: 2px solid;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: .8rem;
+  color: #ffffff;
+  transition: all linear .2s;
+}
+
+.small-button + .small-button {
+  margin-left: 5px;
+}
+
+.small-button.info {
+  color: #61dafb;
+}
+
+.small-button.info:hover {
+  background-color: #61dafb;
+  border-color: #61dafb;
+  color: #282c34;
+}
+
+.small-button.danger {
+  color: #fa6565;
+}
+
+.small-button.danger:hover {
+  background-color: #fa6565;
+  border-color: #fa6565;
+  color: #282c34;
+}
+
+.small-button.warning {
+  color: #faa165;
+}
+
+.small-button.warning:hover {
+  background-color: #faa165;
+  border-color: #faa165;
+  color: #282c34;
+}
+
+.error-msg {
+  color: #fa6565;
+  font-size: .8rem;
+  float: right;
+  margin-top: 2px;
+}
+
+.App-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .8rem;
+  border-top: 1px solid;
+}
+
+.Footer-menu a{
+  color: aliceblue;
+}
+
+input:focus, select:focus, button:focus{
+  outline: none !important;
+}
