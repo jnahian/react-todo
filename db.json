@@ -1,36 +1,20 @@
 {
   "todos": [
     {
-      "id": 1,
-      "title": "Go to office",
-      "description": "Go to office @ 9AM",
-      "date": "01/12/2021",
+      "title": "Goto ofiice",
+      "description": "Goto Office @9 AM everyday",
+      "date": "2021-02-01T03:00:00.000Z",
       "repeat": "daily",
-      "done": true
+      "done": false,
+      "id": 1
     },
     {
-      "title": "Blue Silk Tuxedo with black buttons",
-      "description": "Blue Silk Tuxedo with black buttons",
-      "date": "2010-02-10",
-      "repeat": "once",
+      "title": "Sign in to slack",
+      "description": "",
+      "date": "2021-02-01T03:00:00.000Z",
+      "repeat": "daily",
       "done": true,
       "id": 2
-    },
-    {
-      "title": "Blue Silk Tuxedo with black buttons",
-      "description": "",
-      "date": "2021-03-04T18:00:00.000Z",
-      "repeat": "once",
-      "done": true,
-      "id": 3
-    },
-    {
-      "title": "Dark Denim Top Dark Denim Top",
-      "description": "Dark Denim Top Dark Denim TopDark Denim Top Dark Denim TopDark Denim Top Dark Denim TopDark Denim Top Dark Denim Top",
-      "date": "2021-03-12T18:00:00.000Z",
-      "repeat": "once",
-      "done": false,
-      "id": 5
     }
   ]
 }

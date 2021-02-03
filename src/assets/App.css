@@ -90,7 +90,7 @@
   color: #fff;
 }
 
-.App-form .form-item  .form-input {
+.App-form .form-item .form-input {
   width: calc(100% - 30px);
 }
 
@@ -207,10 +207,14 @@
   border-top: 1px solid;
 }
 
-.Footer-menu a{
+.Footer-menu a {
   color: aliceblue;
 }
 
-input:focus, select:focus, button:focus{
+input:focus, select:focus, button:focus {
   outline: none !important;
+}
+
+.rdtPicker {
+  color: #282c34;
 }

@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import TodoList from "./TodoList";
 import AddTodo from "./AddTodo";
+import About from "./About";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <section className="App-content">
           <Route path="/" exact component={TodoList}/>
           <Route path="/todos/add" exact component={AddTodo}/>
+          <Route path="/about" exact component={About}/>
         </section>
         <Footer/>
 
