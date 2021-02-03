@@ -1,20 +1,16 @@
 import React from 'react';
 import {IoTrash} from "react-icons/io5";
-import {API_ROUTES} from "../config/api";
 import {toast} from "react-toastify";
 import {confirmAlert} from 'react-confirm-alert';
 import "../assets/react-confirm-alert.css";
+import Client from "../config/client";
 
 const ButtonDelete = ({todo, todos, setTodos}) => {
 
   const deleteTodo = async (todo) => {
     try {
-      await fetch(`${API_ROUTES.TODOS}/${todo.id}`, {
-        method: "DELETE"
-      });
-
+      const {status} = await Client().delete(`todos/${todo.id}`);
       setTodos(todos.filter(td => td.id !== todo.id));
-
       toast.success(`Todo deleted`);
     } catch (e) {
       console.log(e)
@@ -45,11 +41,9 @@ const ButtonDelete = ({todo, todos, setTodos}) => {
   }
 
   return (
-    <>
-      <button className="small-button danger" onClick={() => confirmAction(todo)} type="button">
-        <IoTrash/>
-      </button>
-    </>
+    <button className="small-button danger" onClick={() => confirmAction(todo)} type="button">
+      <IoTrash/>
+    </button>
   );
 };
 

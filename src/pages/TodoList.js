@@ -1,8 +1,8 @@
-import {useState, useEffect} from "react";
-import {API_ROUTES} from "../config/api";
+import {useEffect, useState} from "react";
 import moment from 'moment';
 import ButtonMarkAsDone from "../components/ButtonMarkAsDone";
 import ButtonDelete from "../components/ButtonDelete";
+import Client from "../config/client";
 
 const TodoList = () => {
 
@@ -22,8 +22,12 @@ const TodoList = () => {
   }, []);
 
   const fetchTodos = async () => {
-    const res = await fetch(API_ROUTES.TODOS);
-    return await res.json();
+    try {
+      const {data} = await Client().get('/todos');
+      return data;
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   const formatDateTime = (date) => {
@@ -33,7 +37,7 @@ const TodoList = () => {
 
   return (
     <div className="App-todos">
-      { todos.length === 0 && <div className="App-todo">There is no todo.</div>}
+      {todos.length === 0 && <div className="App-todo">There is no todo.</div>}
       {todos.map(todo =>
         (<div className={`App-todo ${todo.done ? 'done' : ''}`} key={todo.id}>
           <div>
@@ -42,8 +46,8 @@ const TodoList = () => {
             <p className="date">Date: {formatDateTime(todo.date)}</p>
           </div>
           <div className="actions">
-            <ButtonMarkAsDone todo={todo} todos={todos} setTodos={setTodos} />
-            <ButtonDelete todo={todo} todos={todos} setTodos={setTodos} />
+            <ButtonMarkAsDone todo={todo} todos={todos} setTodos={setTodos}/>
+            <ButtonDelete todo={todo} todos={todos} setTodos={setTodos}/>
           </div>
         </div>)
       )}

@@ -1,11 +1,10 @@
-import {useState} from 'react';
-import {API_ROUTES} from "../config/api";
+import {useEffect, useState} from 'react';
 import {useHistory} from "react-router-dom";
 import {IoSaveOutline} from "react-icons/io5";
 import {toast} from "react-toastify";
 import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
-import {useEffect} from "react";
+import Client from "../config/client";
 
 const AddTodo = () => {
   const history = useHistory();
@@ -53,19 +52,11 @@ const AddTodo = () => {
     }
 
     try {
-
-      const res = await fetch(API_ROUTES.TODOS, {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json"
-        },
-        body: JSON.stringify({title, description, date, repeat, done: false})
-      });
-
+      const {data} = await Client().post('/todos', {title, description, date, repeat, done: false});
       await emptyForm();
       await history.push('/');
       toast.success(`New todo saved.`);
-      return await res.json();
+      return data;
     } catch (e) {
       console.log(e)
     }
@@ -73,9 +64,7 @@ const AddTodo = () => {
   }
 
   const setDateFromPicker = (date) => {
-    console.log(date);
     setDate(date);
-
   }
 
   const emptyForm = async () => {

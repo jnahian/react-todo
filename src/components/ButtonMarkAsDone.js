@@ -1,29 +1,17 @@
 import React from 'react';
 import {IoCheckmarkDone, IoClose} from "react-icons/io5";
-import {API_ROUTES} from "../config/api";
 import {toast} from "react-toastify";
 import {confirmAlert} from "react-confirm-alert";
 import "../assets/react-confirm-alert.css";
+import Client from "../config/client";
 
 const ButtonMarkAsDone = ({todo, todos, setTodos}) => {
   const markAsDone = async (todo) => {
     const doneMsg = todo.done ? 'not done' : 'done';
     try {
-
-      const res = await fetch(`${API_ROUTES.TODOS}/${todo.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-type": "application/json"
-        },
-        body: JSON.stringify({...todo, done: !todo.done})
-      });
-
-      const data = await res.json();
-
+      const {data} = await Client().put(`/todos/${todo.id}`, {...todo, done: !todo.done});
       setTodos(todos.map(td => td.id === todo.id ? data : td));
-
       toast.success(`Todo marked as ${doneMsg}`);
-
     } catch (e) {
       console.log(e)
     }
@@ -55,11 +43,9 @@ const ButtonMarkAsDone = ({todo, todos, setTodos}) => {
   }
 
   return (
-    <>
-      <button className={`small-button ${todo.done ? 'warning' : 'info'}`} onClick={() => confirmAction(todo)} type="button">
-        {todo.done ? <IoClose/> : <IoCheckmarkDone/>}
-      </button>
-    </>
+    <button className={`small-button ${todo.done ? 'warning' : 'info'}`} onClick={() => confirmAction(todo)} type="button">
+      {todo.done ? <IoClose/> : <IoCheckmarkDone/>}
+    </button>
   );
 };
 
