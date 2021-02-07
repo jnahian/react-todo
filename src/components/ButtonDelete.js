@@ -9,7 +9,7 @@ const ButtonDelete = ({todo, todos, setTodos}) => {
 
   const deleteTodo = async (todo) => {
     try {
-      const {status} = await Client().delete(`todos/${todo.id}`);
+      await Client().delete(`todos/${todo.id}`);
       setTodos(todos.filter(td => td.id !== todo.id));
       toast.success(`Todo deleted`);
     } catch (e) {
@@ -41,7 +41,11 @@ const ButtonDelete = ({todo, todos, setTodos}) => {
   }
 
   return (
-    <button className="small-button danger" onClick={() => confirmAction(todo)} type="button">
+    <button
+      className="small-button danger"
+      onClick={() => confirmAction(todo)}
+      type="button"
+    >
       <IoTrash/>
     </button>
   );

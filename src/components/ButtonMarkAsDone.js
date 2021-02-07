@@ -43,7 +43,11 @@ const ButtonMarkAsDone = ({todo, todos, setTodos}) => {
   }
 
   return (
-    <button className={`small-button ${todo.done ? 'warning' : 'info'}`} onClick={() => confirmAction(todo)} type="button">
+    <button
+      className={`small-button ${todo.done ? 'warning' : 'info'}`}
+      onClick={() => confirmAction(todo)}
+      type="button"
+    >
       {todo.done ? <IoClose/> : <IoCheckmarkDone/>}
     </button>
   );
